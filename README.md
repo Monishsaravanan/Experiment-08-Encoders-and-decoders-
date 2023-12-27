@@ -56,22 +56,49 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
-
+ Program for Endocers and Decoders and verify its truth table in quartus using Verilog programming.
+Developed by :Monish.S
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:Monish.S 
+RegisterNumber: 212223040115
+```
+encoder
 
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+Decoder:
 
-
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
 
 ### RTL LOGIC  
+
+# Encoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/84ea4754-4548-4c0a-b179-2b7fb372d02a)
+Decoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/3c8cd786-2772-42dd-924c-aa1e1b1b5706)
 
 
 
@@ -81,16 +108,26 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+# Encoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/8b3bf004-e644-4280-9a2a-8d662be1ce05)
+Decoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/2e0aa689-9579-4708-81e3-955d27338911)
+
+
 
 
 
 
 
 ### TRUTH TABLE 
+# Encoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/80155c30-8502-46e8-840c-3fa12930b8e1)
+# Decoder:
+![image](https://github.com/Monishsaravanan/Experiment-08-Encoders-and-decoders-/assets/145743227/6a3cc59c-0ab0-47e2-94e8-bc6cea2b709c)
 
 
 
 
+### RESULTS
+Therefore 8 to 3 Encoder and 3to8 Decoder are implemented successfully using verilog and validate its outputs
 
-
-### RESULTS 
